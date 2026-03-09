@@ -22,6 +22,24 @@ def add_student(request):
             email=email,
             phone_number=phone
         )
-        return redirect("/student/std/")
+        return redirect("Student_home") 
 
     return render(request, "student/add_student.html")
+def delete_student(request, id):
+    my_student = Student.objects.get(id=id)
+    my_student.delete()
+    return redirect("Student_home")
+
+def update_student(request,id):
+    student = Student.objects.get(id=id)
+    if request.method == "POST":
+        student.name = request.POST.get("name")
+        student.email = request.POST.get("email")
+        student.phone_number = request.POST.get("phone_number")
+
+        student.save()
+      
+    parameter = {
+        "student": student
+    }
+    return render(request , "student/update_student.html",parameter)
