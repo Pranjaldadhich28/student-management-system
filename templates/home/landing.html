@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+.hero{
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background: linear-gradient(135deg,#4facfe,#00f2fe);
+}
+
+.hero-box{
+background:white;
+padding:40px;
+border-radius:12px;
+text-align:center;
+width:750px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.hero-box h1{
+font-size:36px;
+color:#333;
+margin-bottom:10px;
+}
+
+.subtitle{
+color:#666;
+margin-bottom:30px;
+}
+
+.features{
+display:flex;
+justify-content:space-around;
+margin-bottom:35px;
+}
+
+.feature{
+background:#f5f7fa;
+padding:15px;
+border-radius:8px;
+width:140px;
+}
+
+.feature h3{
+color:#4facfe;
+margin-bottom:8px;
+}
+
+.feature p{
+font-size:14px;
+color:#555;
+}
+
+.btn-dashboard{
+padding:14px 28px;
+background:#4facfe;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+text-decoration:none;
+}
+
+.btn-dashboard:hover{
+background:#2d8cf0;
+}
+</style>
+
+<div class="hero">
+
+<div class="hero-box">
+
+<h1>Student Management System</h1>
+<p class="subtitle">Manage student records easily using Django.</p>
+
+<div class="features">
+
+<div class="feature">
+<h3>Create</h3>
+<p>Add student data</p>
+</div>
+
+<div class="feature">
+<h3>Read</h3>
+<p>View student records</p>
+</div>
+
+<div class="feature">
+<h3>Update</h3>
+<p>Edit information</p>
+</div>
+
+<div class="feature">
+<h3>Delete</h3>
+<p>Remove records</p>
+</div>
+
+</div>
+
+<a href="/student/std/" class="btn-dashboard">Enter Dashboard</a>
+
+</div>
+
+</div>
+
+{% endblock %}
